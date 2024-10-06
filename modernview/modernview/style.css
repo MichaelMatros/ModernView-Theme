@@ -1,0 +1,548 @@
+/*
+ Theme Name: Modern View
+ Theme URI: -
+ Author: Michael Matros
+ Author URI: http://upwebstudio.ru/
+ Description: A modern and stylish theme with a minimalist design, perfect for businesses, blogs and portfolios. It is easy to damage through the WordPress admin panel, allowing users to customize each element without the need for coding. Fully responsive and fast, this theme provides excellent equipment on any device.
+ Version: 1.0
+ License: GNU General Public License
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ Tags: ModernDesign, Responsive, Customizable, BusinessTheme, Minimalist
+ Text Domain: modernview
+ Tested up to: 6.3
+ Requires PHP: 6.5
+*/
+
+/* Основные стили для header */
+body {
+    background-color: #000;
+    color: #fff;
+    background-attachment: scroll; /* Вместо fixed можно использовать scroll */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 0;
+}
+.screen-reader-text {
+    position: absolute;  /* Позиционирование */
+    width: 1px;          /* Ширина 1 пиксель */
+    height: 1px;         /* Высота 1 пиксель */
+    padding: 0;          /* Удалить отступы */
+    margin: -1px;        /* Убрать маргин */
+    overflow: hidden;    /* Скрыть переполнение */
+    clip: rect(0, 0, 0, 0);  /* Обрезка для экранных читалок */
+    border: 0;           /* Удалить границу */
+}
+.parallax {
+    background-attachment: fixed; /* Эффект параллакса */
+    background-position: center 0;
+    background-size: cover;
+}
+a:-webkit-any-link {
+    cursor: auto;
+    text-decoration: none;
+}
+/* Основные стили для хедера */
+.main-header {
+    display: flex;
+    justify-content: center; /* Центрирование контейнера по горизонтали */
+    align-items: center; /* Центрирование контейнера по вертикали */
+    height: 100vh; /* Высота на весь экран */
+    background-color: #000; /* Черный фон страницы */
+}
+
+/* Контейнер для логотипа, меню и кнопки */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Равномерное распределение элементов по горизонтали */
+    align-items: center; /* Центрирование элементов по вертикали */
+    background-color: #080808; /* Серый фон для блока */
+    padding: 25px 20px;
+    border-radius: 10px; /* Скругленные углы для блока */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для блока */
+    width: 60%; /* Ширина блока, можно настроить */
+    max-width: 1200px; /* Максимальная ширина блока */
+    margin: 15px auto; /* Центрирование блока */
+}
+
+/* Стили для логотипа */
+.header-container .logo {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto;
+}
+.header-container .logo h1 {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    margin: 0; /* Убираем отступы */
+}
+
+/* Иконка меню для мобильных устройств (временно убрана) */
+.menu-toggle {
+    display: none; /* Иконка меню скрыта по умолчанию */
+}
+
+/* Стили для меню */
+.main-menu {
+    flex: 2; /* Меню занимает больше пространства в центре */
+    display: flex;
+    align-items: center; /* Центрирование элементов по вертикали */
+    justify-content: center;
+}
+
+.main-menu .menu {
+    display: flex; /* Flexbox для списка меню */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Занимает всю доступную ширину */
+    justify-content: center; /* Центрирование пунктов меню */
+}
+
+.main-menu .menu li {
+    margin: 0 15px; /* Пробелы между пунктами меню */
+}
+
+.main-menu .menu li a {
+    color: #fff; /* Цвет текста меню */
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+/* Стили для кнопки */
+.header-button .button {
+    background: #080808;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border-radius: 30px;
+    border: 1px solid #aaaaaa;
+    margin-top: 50px;
+    /* Начальная прозрачная граница */
+    transition: 0.4s ease; /* Плавный переход */
+    cursor: pointer;
+}
+.header-button .button:hover {
+    background-color: #d8b9ff;
+    color: #000;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .header-container {
+        flex-direction: column; /* Вертикальное расположение элементов на мобильных устройствах */
+        padding: 30px;
+    }
+
+    .header-container .logo {
+        margin-bottom: 10px; /* Отступ снизу для логотипа */
+    }
+
+    .main-menu {
+        display: none; /* Скрыть меню на мобильных устройствах */
+    }
+
+    .header-button {
+        display: block; /* Кнопка отображается на мобильных устройствах */
+        margin-top: 20px;
+    }
+}
+
+
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Высота хедера на весь экран */
+    background-color: #f8f9fa; /* Цвет фона хедера */
+    text-align: center;
+}
+
+/* Стили для содержимого хедера */
+.header-content {
+    margin: 0 auto; /* Центрирование блока по горизонтали */
+    transition: width 0.3s ease;
+    text-align: center; /* Центрирование текста внутри блока */
+}
+
+/* Основной текст */
+.main-text {
+    font-size: 100px; /* Размер шрифта основного текста */
+    margin: 0; /* Убираем отступы */
+    color: #ffffff;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -1px;
+    line-height: 105px;
+    padding: 50px 30px 50px 30px;
+}
+
+/* Подзаголовок */
+.sub-header {
+    font-size: 20px; /* Размер шрифта подзаголовка */
+    margin: 20px 0; /* Отступы сверху и снизу */
+    color: #666; /* Цвет подзаголовка */
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -1px;
+    line-height: 25px;
+    padding: 30px 70px 70px;
+    transition: width 0.3s ease;
+}
+
+.main-text, .sub-header {
+    margin: 0 auto; /* Центрирование блока по горизонтали */
+    text-align: center;
+}
+
+/* Кнопка */
+.header-content .but {
+    background: #000000;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border-radius: 30px;
+    border: 1px solid ;
+    border-color: #aaaaaa;
+    margin-top: 50px;
+    cursor: pointer;
+    /* Начальная прозрачная граница */
+    transition: background 0.4s ease, border-color 0.4s ease, transform 0.4s ease; /* Плавный переход */
+}
+
+/* Стиль кнопки при наведении */
+.but:hover {
+    background-color: #d8b9ff;
+    color: #000;
+    user-select: none;
+}
+
+
+@media (max-width: 1200px) {
+    .main-text {
+        font-size: 70px;
+        line-height: 70px;
+    }
+    .sub-header {
+        font-size: 18px; /* Размер шрифта подзаголовка */
+        line-height: 25px;
+    }
+}
+@media (max-width: 796px) {
+    .main-text {
+        font-size: 45px;
+        line-height: 50px;
+    }
+    .sub-header {
+        font-size: 18px; /* Размер шрифта подзаголовка */
+        line-height: 25px;
+    }
+}
+
+
+.blocks-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 55px auto;
+    flex-wrap: wrap; /* Позволяет блокам переноситься на следующую строку при необходимости */
+}
+
+.block {
+    flex: 1 1 calc(33.333% - 20px); /* Три блока в ряду с учетом отступов */
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    margin: 10px; /* Отступ между блоками */
+}
+
+/* Стили для изображения */
+.block img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 10px;
+}
+.block{
+    padding: 50px;
+    background-color: #d6b9ff;
+    color: #000;
+
+}
+.block h3{
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.block p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+}
+/* Мобильная версия */
+@media (max-width: 908px) {
+    .block {
+        flex: 1 1 calc(50% - 20px); /* Для меньших экранов два блока в ряду */
+    }
+}
+
+@media (max-width: 556px) {
+    .block {
+        flex: 1 1 100%; /* Для маленьких экранов один блок в ряду */
+    }
+}
+
+
+
+
+/* Стили для секции команды */
+.team-section {
+    padding: 50px 20px; /* Отступы внутри секции */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.team-container {
+    max-width: 1200px; /* Максимальная ширина секции */
+    margin: 0; /* Центрирование секции */
+    text-align: left;
+
+}
+
+.team-text {
+    text-align: left; /* Выровнено по левому краю */
+    margin-bottom: 30px; /* Отступ между текстом и изображениями */
+}
+
+.team-text h2 {
+
+    max-width: 1090px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 60px;
+    margin-bottom: 15px;
+    line-height: 55px;
+}
+
+.tt2{
+    max-width: 1090px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 40px;
+    margin-bottom: 15px;
+    line-height: 40px;
+}
+
+
+
+/* Стили для изображений членов команды */
+.team-members {
+    justify-content: flex-start; /* Изображения выровнены по левому краю */
+    gap: 10px; /* Расстояние между изображениями */
+    display: flex;
+    align-items: center;
+
+}
+.team-member {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+.team-member img {
+    width: 170px !important; /* Ширина изображения */
+    height: 170px !important; /* Высота изображения */
+    object-fit: cover; /* Обрезка изображения по центру */
+    border-radius: 50%; /* Изображения в виде круга */
+    border: none; /* Граница для изображений */
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .team-members {
+        flex-wrap: wrap; /* Изображения переносятся на следующую строку на маленьких экранах */
+        justify-content: center; /* Центрирование на маленьких экранах */
+    }
+
+    .team-member img {
+        width: 100px; /* Уменьшение размера изображений на мобильных устройствах */
+        height: 100px;
+    }
+}
+
+
+
+
+
+.contact-team-section {
+    display: flex;
+    justify-content: center; /* Центрирует секцию по горизонтали */
+    padding: 50px; /* Добавляет отступы сверху и снизу */
+}
+
+.contact-team-container {
+    display: flex;
+    flex-direction: row; /* Горизонтальное размещение элементов */
+    justify-content: space-between; /* Пространство между элементами */
+    max-width: 1200px; /* Устанавливает максимальную ширину контейнера */
+    width: 100%; /* Занимает 100% ширины родительского элемента */
+    margin: 0 auto; /* Центрирует контейнер */
+}
+
+.contact-image {
+    flex: 1; /* Устанавливает равные размеры для изображения */
+}
+
+.contact-image img {
+    max-width: 100%; /* Изображение займет всю ширину контейнера */
+    height: auto; /* Сохраняет пропорции изображения */
+}
+
+.contact-details {
+    flex: 1; /* Устанавливает равные размеры для заголовка и текста */
+    margin-left: 50px; /* Добавляет отступ слева */
+}
+
+.contact-details h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 80px;
+    margin-bottom: 15px;
+    line-height: 85px;
+    word-break: break-word;
+}
+
+.contact-details p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #8b8b8b;
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 26px;
+    margin: 30px 0px 30px 0px;
+    word-break: break-word; /* Переносит длинные слова */
+
+    white-space: pre-wrap;
+}
+.conbut {
+    background: #000000;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border-radius: 30px;
+    border: 1px solid ;
+    border-color: #aaaaaa;
+    cursor: pointer;
+    /* Начальная прозрачная граница */
+    transition: background 0.4s ease, border-color 0.4s ease, transform 0.4s ease; /* Плавный переход */
+}
+.conbut:hover {
+    background-color: #d8b9ff;
+    color: #000;
+    user-select: none;
+    cursor: pointer;
+}
+
+@media (max-width: 1268px) {
+    .contact-team-container {
+        flex-direction: column; /* Вертикальное размещение элементов */
+        align-items: center; /* Центрирует элементы по горизонтали */
+    }
+
+    .contact-image {
+        margin-bottom: 20px; /* Добавляет отступ снизу для изображения */
+    }
+
+    .contact-details {
+        margin-left: 0; /* Убирает отступ слева для текста */
+        text-align: center; /* Центрирует текст */
+
+    }
+    .contact-details h2 {
+        font-size: 50px;
+        line-height: 55px;
+
+    }
+}
+
+
+.site-footer {
+    background-color: #00000000; /* Цвет фона */
+    text-align: center; /* Центрирует текст */
+    padding: 20px 0; /* Отступы сверху и снизу */
+}
+
+.footer-content {
+    max-width: 1200px; /* Максимальная ширина футера */
+    margin: 0 auto; /* Центрирует футер */
+
+}
+.footer-content h2 {
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+    font-weight: 400;
+}
+.footer-content p {
+    color: #8b8b8b;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+}
+
+.footer-menu {
+    margin: 10px 0; /* Отступы для меню */
+}
+
+.footer-menu ul {
+    list-style: none; /* Убирает маркеры */
+    padding: 0; /* Убирает отступы */
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.footer-menu li {
+    display: inline; /* Горизонтальное размещение элементов меню */
+}
+.footer-menu li a {
+    display: inline; /* Горизонтальное размещение элементов меню */
+    margin: 0 15px; /* Отступы между пунктами меню */
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
